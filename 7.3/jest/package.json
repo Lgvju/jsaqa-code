@@ -7,7 +7,7 @@
     "test": "jest",
     "test: watch": "jest --watchAll",
     "coverage": "jest --collectCoverage",
-    "coverageThreshold": {
+    "coverageThreshold": {    
       "branches": 100,
       "functions": 100,
       "lines": 100
