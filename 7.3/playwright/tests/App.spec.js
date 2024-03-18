@@ -12,9 +12,7 @@ test.describe("Авторизация", () => {
 
   test('Неуспешная авторизация', async ({ page }) => {
     const browser = await chromium.launch({
-     headless: false,
-     slowMo: 500
-   });  
+    });  
    await page.goto('https://netology.ru/');
    await page.getByRole('link', { name: 'Войти' }).click();
    await page.getByPlaceholder('Email').click();
@@ -30,9 +28,7 @@ test.describe("Авторизация", () => {
 
   test('Успешная авторизация', async ({ page }) => {
       const browser = await chromium.launch({
-      headless: false,
-      slowMo: 500
-    }); 
+     }); 
     await page.goto('https://netology.ru/');
     await page.getByRole('link', { name: 'Войти' }).click();
     
