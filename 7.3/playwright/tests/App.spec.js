@@ -41,7 +41,7 @@ test.describe("Авторизация", () => {
     await page.getByPlaceholder('Пароль').fill(password);
     await page.getByTestId('login-submit-btn').click();
     //await expect(page.getByTestId('header-top').getByRole('link', { name: 'Медиа Нетологии' })).toBeVisible();  
-    await page.getByRole('link', { name: 'Расписание занятий' }).click();  
+    await expect(page).toHaveTitle('Нетология — обучение современным профессиям онлайн'); 
     await page.screenshot({ path: "screenshotSuccessful.png", fullPage: true });
   });
  });
