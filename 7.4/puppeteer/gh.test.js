@@ -38,13 +38,9 @@ describe("Github page tests", () => {
 
 describe("Github about page tests", () => { 
   beforeEach(async()=>{
-    page = await browser.newPage();
     await page.goto("https://github.com/about");
   });
-  afterEach(() => {
-    page.close();
-  });
-  test("The h1 header content", async () => {
+    test("The h1 header content", async () => {
     const firstLink = await page.$("header div div a");
     await firstLink.click();
     await page.waitForSelector('h1');
