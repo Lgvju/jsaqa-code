@@ -25,22 +25,22 @@ Given("user is on {string} page", async function (string) {
   });
 });
 When("user choose day", async function () {
- return await clickElement(this.page, "page-nav__day:last-child");
+ return await clickElement(this.page, ".page-nav > a:nth-child(5)");
 },70000);
 When("user choose time", async function () {
-  await clickElement(this.page, "div.movie-seances__hall");
+  await clickElement(this.page, "a.movie-seances__time");
 });
 When("user select 1 row 10 seat", async function () {
-  await clickElement(this.page, ".buying-scheme__chair_standart > span:nth-child(10)");
+  await clickElement(this.page, ".buying-scheme__row > span:nth-child(10)");
 },70000);
 When("user select 1 row 5 seat", async function () {
-  await clickElement(this.page, ".buying-scheme__chair_standart> span:nth-child(5)");
+  await clickElement(this.page, ".buying-scheme__row> span:nth-child(5)");
 });
 When("user select 1 row 6 seat", async function () {
-  await clickElement(this.page, ".buying-scheme__chair_standart> span:nth-child(6)");
+  await clickElement(this.page, ".buying-scheme__row> span:nth-child(6)");
   });
 When("user select the booked place", async function () {
-  await clickElement(this.page, ".buying-scheme__chair_standart> span:nth-child(10)");
+  await clickElement(this.page, ".buying-scheme__row> span:nth-child(10)");
 });
 When("user click button", async function () {
   await clickElement(this.page, "button.acceptin-button");
@@ -49,7 +49,7 @@ When("user click receive QR", async function () {
   await clickElement(this.page, "button.acceptin-button");
 });
 Then("user see text {string}", async function (string) {
-    const actual = await getText(this.page, "p.ticket__check");
+    const actual = await getText(this.page, " p.ticket__hint");
     const expected = await string;
     expect(actual).contains(expected);
   });

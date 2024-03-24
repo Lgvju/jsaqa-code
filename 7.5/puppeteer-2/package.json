@@ -15,5 +15,9 @@
     "jest-puppeteer": "^9.0.1",
     "puppeteer": "^21.5.0"
   },
-  
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "description": ""
 }
