@@ -25,7 +25,7 @@ Given("user is on {string} page", async function (string) {
   });
 });
 When("user choose day", async function () {
- return await clickElement(this.page, "page-nav__day-number");
+ return await clickElement(this.page, "page-nav__day:last-child");
 },70000);
 When("user choose time", async function () {
   await clickElement(this.page, "div.movie-seances__hall");

@@ -15,16 +15,5 @@
     "jest-puppeteer": "^9.0.1",
     "puppeteer": "^21.5.0"
   },
-  "directories": {
-    "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Lgvju/JSAQA-7-05-HW.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Lgvju/JSAQA-7-05-HW/issues"
-  },
-  "homepage": "https://github.com/Lgvju/JSAQA-7-05-HW#readme",
-  "description": ""
+  
 }
