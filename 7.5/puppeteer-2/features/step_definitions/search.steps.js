@@ -3,8 +3,8 @@ const chai = require("chai");
 const expect = chai.expect;
 const { Given, When, Then, Before, After,setDefaultTimeout } = require('@cucumber/cucumber');
 const { clickElement, getText } = require("../../lib/commands.js");
-const {setDefaultTimeout} = require('@cucumber/cucumber');
-setDefaultTimeout(60 * 1000);
+//const {setDefaultTimeout} = require('@cucumber/cucumber');
+ setDefaultTimeout(60 * 1000);
 
 Before(async function () {
   const browser = await puppeteer.launch({ headless: false, slowMo: 50 });
@@ -31,16 +31,16 @@ When("user choose time", async function () {
   await clickElement(this.page, "a.movie-seances__time");
 });
 When("user select 1 row 10 seat", async function () {
-  await clickElement(this.page, ".buying-scheme__row > span:nth-child(10)");
+  await clickElement(this.page, "div.buying-scheme__wrapper> div:nth-child(2)> span:nth-child(10)");
 },70000);
 When("user select 1 row 5 seat", async function () {
-  await clickElement(this.page, ".buying-scheme__row> span:nth-child(5)");
+  await clickElement(this.page, "div.buying-scheme__wrapper> div:nth-child(2)> span:nth-child(5)");
 });
 When("user select 1 row 6 seat", async function () {
-  await clickElement(this.page, ".buying-scheme__row> span:nth-child(6)");
+  await clickElement(this.page, "div.buying-scheme__wrapper> div:nth-child(2)>span:nth-child(6)");
   });
 When("user select the booked place", async function () {
-  await clickElement(this.page, ".buying-scheme__row> span:nth-child(10)");
+  await clickElement(this.page, "div.buying-scheme__wrapper> div:nth-child(2)> span:nth-child(10)");
 });
 When("user click button", async function () {
   await clickElement(this.page, "button.acceptin-button");
@@ -48,7 +48,7 @@ When("user click button", async function () {
 When("user click receive QR", async function () {
   await clickElement(this.page, "button.acceptin-button");
 });
-Then("user see text {string}", async function (string) {
+Then("user see text {string}" , async function (string) {
     const actual = await getText(this.page, " p.ticket__hint");
     const expected = await string;
     expect(actual).contains(expected);

@@ -21,7 +21,7 @@ describe('Ticket booking tests', () => {
 	test('Should successfully book one ticket', async () => {
 		await clickElement(page, '.page-nav > a:nth-child(5)');
 		await clickElement(page, 'a.movie-seances__time');
-		await clickElement(page, '.buying-scheme__row > span:nth-child(1)');
+		await clickElement(page, 'div.buying-scheme__wrapper> div:nth-child(2) > span:nth-child(1)');
 		await clickElement(page, 'button.acceptin-button');
 		await clickElement(page, 'button.acceptin-button');
 		const actual = await getText(page, 'p.ticket__hint');
@@ -31,8 +31,8 @@ describe('Ticket booking tests', () => {
 	test('Should successfully book two tickets', async () => {
 		await clickElement(page, '.page-nav > a:nth-child(5)');
 		await clickElement(page, 'a.movie-seances__time');
-		await clickElement(page, '.buying-scheme__row > span:nth-child(2)');
-		await clickElement(page, '.buying-scheme__row > span:nth-child(3)');
+		await clickElement(page, 'div.buying-scheme__wrapper> div:nth-child(2)> span:nth-child(2)');
+		await clickElement(page, 'div.buying-scheme__wrapper> div:nth-child(2)> span:nth-child(3)');
 		await clickElement(page, 'button.acceptin-button');
 		await clickElement(page, 'button.acceptin-button');
 		const actual = await getText(page, 'p.ticket__hint');
@@ -42,7 +42,7 @@ describe('Ticket booking tests', () => {
 	test('Should unsuccessful to book already booked ticket', async () => {
 		await clickElement(page, '.page-nav > a:nth-child(5)');
 		await clickElement(page, 'a.movie-seances__time');
-		await clickElement(page, '.buying-scheme__row > span:nth-child(1)');
+		await clickElement(page, 'div.buying-scheme__wrapper> div:nth-child(2)> span:nth-child(1)');
 		expect(String(await page.$eval("button", (button) => {
 		return button.disabled;}))).toContain("true");
  });
